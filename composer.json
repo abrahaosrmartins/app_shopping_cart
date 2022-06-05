@@ -1,0 +1,16 @@
+{
+    "name": "abrsr/app_shopping_cart",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Abrsr\\AppShoppingCart\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Abrahão Martins",
+            "email": "abrahaosrmartins@gmail.com"
+        }
+    ],
+    "require": {}
+}
