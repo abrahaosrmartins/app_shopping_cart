@@ -4,87 +4,48 @@ namespace App;
 
 class ShopCart
 {
-    // ATTRIBUTES
-    private $items;
-    private $status;
-    private $totalValue;
+   /**
+    * @var array $items
+    */
+   private array $items;
 
-    // METHODS=
-    public function __construct()
-    {
-        $this->items = [];
-        $this->status = 'open';
-        $this->totalValue = 0;
-    }
+   /**
+    * Class constructor
+    */
+   public function __construct()
+   {
+       $this->items = [];
+   }
 
     /**
+     * Get cart items
+     *
      * @return array
      */
-    public function getItems(): array
-    {
-        return $this->items;
-    }
+   public function getItems(): array
+   {
+       return $this->items;
+   }
 
     /**
-     * @param string $item
-     * @param float $value
+     * Add new item to cart
+     *
+     * @param Item $item
      * @return bool
      */
-    public function addItems(string $item, float $value): bool
-    {
-        $this->items[] = [
-            'item' => $item,
-            'value' => $value
-        ];
-
-        $this->totalValue += $value;
-        return true;
-    }
+   public function addItem(Item $item): bool
+   {
+       $this->items[] = $item;
+       return true;
+   }
 
     /**
-     * @return int
-     */
-    public function getTotalValue(): int
-    {
-        return $this->totalValue;
-    }
-
-    /**
-     * @return string
-     */
-    public function getStatus(): string
-    {
-        return $this->status;
-    }
-
-    /**
+     * Validates cart items
+     *
      * @return bool
      */
-    public function updateStatus(): bool
-    {
-        if($this->validateCart()) {
-            $this->status = 'confirmed';
-            $this->sendConfirmationEmail();
-
-            return true;
-        }
-
-        return false;
-    }
-
-    /**
-     * @return void
-     */
-    public function sendConfirmationEmail()
-    {
-        echo "<br />Confirmation e-mail sent!<br />";
-    }
-
-    /**
-     * @return bool
-     */
-    public function validateCart(): bool
-    {
-        return count($this->items) > 0;
-    }
+   public function validateCart(): bool
+   {
+       return count($this->items) > 0;
+   }
 }
