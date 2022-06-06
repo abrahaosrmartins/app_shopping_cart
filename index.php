@@ -1,8 +1,8 @@
 <?php
 
 require __DIR__ . '/vendor/autoload.php';
+use App\ShopCart;
 
-use Abrsr\AppShoppingCart\ShopCart;
 
 $cart1 = new ShopCart();
 

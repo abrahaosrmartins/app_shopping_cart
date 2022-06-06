@@ -1,6 +1,6 @@
 <?php
 
-namespace Abrsr\AppShoppingCart;
+namespace App;
 
 class ShopCart
 {
