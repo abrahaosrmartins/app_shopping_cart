@@ -60,4 +60,28 @@ class ItemTest extends TestCase
         $item->setValue(0);
         $this->assertFalse($item->validItem());
     }
+
+    /**
+     * @dataProvider getValueData
+     * @param $value
+     * @return void
+     */
+    public function testUpdateItemValue($value)
+    {
+        $item = new Item();
+        $item->setValue($value);
+        $this->assertEquals($value, $item->getValue());
+    }
+
+    /**
+     * @return array
+     */
+    public function getValueData(): array
+    {
+        return [
+            [100],
+            [-2],
+            [0]
+        ];
+    }
 }
