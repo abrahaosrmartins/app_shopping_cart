@@ -67,7 +67,7 @@ class Item
      */
     public function validItem(): bool
     {
-        if ($this->description = '') {
+        if ($this->description == '') {
             return false;
         }
         if ($this->value <= 0) {
