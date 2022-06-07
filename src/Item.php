@@ -33,9 +33,9 @@ class Item
     /**
      * Get item value
      *
-     * @return int
+     * @return float
      */
-    public function getValue(): int
+    public function getValue(): float
     {
         return $this->value;
     }
